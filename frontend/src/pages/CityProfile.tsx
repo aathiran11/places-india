@@ -57,9 +57,9 @@ export default function CityProfile() {
         </div>
       ) : (
         <>
-          <DevelopmentScoreBadge population={profile.population} schools={profile.education?.schools} />
+          <DevelopmentScoreBadge population={profile.population} schools={Number(profile.education?.schools) || undefined} />
 	  <SimilarPlaces cityId={city.id} />
-	  <GrowthOutlookBadge population={profile.population} schools={profile.education?.schools} />
+	  <GrowthOutlookBadge population={profile.population} schools={Number(profile.education?.schools) || undefined} />
 	  <div className="bg-amber-50 border border-amber-100 rounded-xl px-4 py-3 text-xs text-amber-800 mb-6">
             <strong>Illustrative data.</strong> The figures below are placeholder values used to
             demonstrate the profile layout. Phase 3 replaces these with verified government and

@@ -45,7 +45,7 @@ export default function DistrictPage() {
 
       {profile && availableCategories.length > 0 && (
         <>
-	  <DevelopmentScoreBadge population={profile.population} schools={profile.education?.schools} />
+	  <DevelopmentScoreBadge population={profile.population} schools={Number(profile.education?.schools) || undefined} />
           <div className="bg-amber-50 border border-amber-100 rounded-xl px-4 py-3 text-xs text-amber-800 mb-6">
             <strong>Illustrative data.</strong> District-level figures below are placeholder
             values used to demonstrate the profile layout. Phase 3 replaces these with verified

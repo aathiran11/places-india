@@ -13,7 +13,6 @@ import ComparePage from "./pages/ComparePage";
 import DevelopmentScorePredictor from './pages/DevelopmentScorePredictor';
 import ImportData from "./pages/ImportData";
 import RankingsPage from "./pages/RankingsPage";
-import MapPage from "./pages/MapPage"; 
 
 export default function App() {
   return (
@@ -32,7 +31,6 @@ export default function App() {
  	<Route path="/predict-development-score" element={<DevelopmentScorePredictor />} />
         <Route path="/admin/import" element={<ImportData />} />
 	<Route path="/rankings" element={<RankingsPage />} />
-	<Route path="/map" element={<MapPage />} />
       </Routes>
     </AuthProvider>
   );
