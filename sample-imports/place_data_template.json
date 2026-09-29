@@ -1,0 +1,7 @@
+[
+  { "place_type": "city", "name": "Salem", "state_name": "Tamil Nadu", "district_name": "Salem", "category": "population", "field": "total", "value": 919000 },
+  { "place_type": "city", "name": "Salem", "state_name": "Tamil Nadu", "district_name": "Salem", "category": "population", "field": "literacy_rate", "value": 80 },
+  { "place_type": "city", "name": "Salem", "state_name": "Tamil Nadu", "district_name": "Salem", "category": "economy", "field": "avg_monthly_income_inr", "value": 24000 },
+  { "place_type": "city", "name": "Salem", "state_name": "Tamil Nadu", "district_name": "Salem", "category": "economy", "field": "major_industries", "value": "Textiles,Steel,Agriculture" },
+  { "place_type": "city", "name": "Salem", "state_name": "Tamil Nadu", "district_name": "Salem", "category": "safety", "field": "night_safety_score", "value": 68 }
+]

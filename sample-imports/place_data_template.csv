@@ -1,0 +1,6 @@
+place_type,name,state_name,district_name,category,field,value
+city,Salem,Tamil Nadu,Salem,population,total,919000
+city,Salem,Tamil Nadu,Salem,population,literacy_rate,80
+city,Salem,Tamil Nadu,Salem,economy,avg_monthly_income_inr,24000
+city,Salem,Tamil Nadu,Salem,economy,major_industries,"Textiles,Steel,Agriculture"
+city,Salem,Tamil Nadu,Salem,safety,night_safety_score,68

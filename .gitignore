@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment variables (NEVER commit these — contains DB password, JWT secret)
+.env
+**/.env
+!.env.example
+
+# Build output
+dist/
+build/
+frontend/dist/
+
+# Python
+__pycache__/
+**/__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# ML training data (large files — see note in ml_pipeline/README if you have one)
+ml_pipeline/data/*.csv

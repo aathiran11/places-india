@@ -1,0 +1,192 @@
+// District-level and village-level illustrative data, same disclaimer as
+// phase2_data.js applies: placeholder values for UI demonstration only,
+// pending Phase 3's real data pipeline.
+
+// Keyed by district name + state name (districts aren't globally unique by
+// name alone — e.g. there could be a "Bengaluru Urban" in more than one
+// dataset later — so we match on both in the seed runner).
+export const districtProfiles = {
+  "Coimbatore|Tamil Nadu": {
+    population: { total: 3458000, growth_rate_10yr: 12, density_per_sqkm: 815, literacy_rate: 83 },
+    economy: {
+      avg_monthly_income_inr: 28000,
+      employment_rate: 65,
+      major_industries: ["Textiles", "Engineering & Pumps", "Agriculture"],
+      cost_of_living_index: 52,
+    },
+    education: { schools: 2100, colleges: 95, student_teacher_ratio: 25, higher_ed_access_score: 74 },
+    healthcare: { hospitals: 180, clinics: 720, doctors_per_10k: 19, accessibility_score: 68 },
+    infrastructure: { road_quality_score: 66, public_transport_score: 55, internet_penetration: 68, power_reliability: 80 },
+    environment: { aqi_avg: 66, green_cover_pct: 28, water_availability_score: 62 },
+    safety: { crime_rate_index: 27, night_safety_score: 72, women_safety_score: 67 },
+    employment: { job_openings_index: 56, growing_sectors: ["Manufacturing", "IT Services"], avg_salary_growth_pct: 7 },
+  },
+  "Chennai|Tamil Nadu": {
+    population: { total: 4646000, growth_rate_10yr: 8, density_per_sqkm: 26553, literacy_rate: 90 },
+    economy: {
+      avg_monthly_income_inr: 39000,
+      employment_rate: 70,
+      major_industries: ["IT Services", "Automobile Manufacturing", "Port & Logistics"],
+      cost_of_living_index: 66,
+    },
+    education: { schools: 2600, colleges: 195, student_teacher_ratio: 22, higher_ed_access_score: 87 },
+    healthcare: { hospitals: 340, clinics: 1600, doctors_per_10k: 30, accessibility_score: 83 },
+    infrastructure: { road_quality_score: 67, public_transport_score: 78, internet_penetration: 84, power_reliability: 87 },
+    environment: { aqi_avg: 90, green_cover_pct: 16, water_availability_score: 55 },
+    safety: { crime_rate_index: 40, night_safety_score: 68, women_safety_score: 61 },
+    employment: { job_openings_index: 80, growing_sectors: ["IT Services", "Automobile"], avg_salary_growth_pct: 9 },
+  },
+  "Madurai|Tamil Nadu": {
+    population: { total: 3040000, growth_rate_10yr: 6, density_per_sqkm: 823, literacy_rate: 79 },
+    economy: {
+      avg_monthly_income_inr: 22000,
+      employment_rate: 58,
+      major_industries: ["Agriculture", "Textiles", "Tourism"],
+      cost_of_living_index: 42,
+    },
+    education: { schools: 1500, colleges: 60, student_teacher_ratio: 27, higher_ed_access_score: 60 },
+    healthcare: { hospitals: 95, clinics: 380, doctors_per_10k: 15, accessibility_score: 60 },
+    infrastructure: { road_quality_score: 56, public_transport_score: 48, internet_penetration: 58, power_reliability: 74 },
+    environment: { aqi_avg: 70, green_cover_pct: 20, water_availability_score: 52 },
+    safety: { crime_rate_index: 33, night_safety_score: 64, women_safety_score: 59 },
+    employment: { job_openings_index: 42, growing_sectors: ["Tourism", "Textiles"], avg_salary_growth_pct: 5 },
+  },
+  "Dindigul|Tamil Nadu": {
+    population: { total: 2160000, growth_rate_10yr: 7, density_per_sqkm: 480, literacy_rate: 76 },
+    economy: {
+      avg_monthly_income_inr: 18000,
+      employment_rate: 56,
+      major_industries: ["Leather & Tanning", "Agriculture"],
+      cost_of_living_index: 36,
+    },
+    education: { schools: 980, colleges: 32, student_teacher_ratio: 28, higher_ed_access_score: 48 },
+    healthcare: { hospitals: 48, clinics: 210, doctors_per_10k: 11, accessibility_score: 50 },
+    infrastructure: { road_quality_score: 52, public_transport_score: 42, internet_penetration: 52, power_reliability: 72 },
+    environment: { aqi_avg: 55, green_cover_pct: 26, water_availability_score: 58 },
+    safety: { crime_rate_index: 25, night_safety_score: 70, women_safety_score: 65 },
+    employment: { job_openings_index: 32, growing_sectors: ["Leather Goods", "Agro-processing"], avg_salary_growth_pct: 4 },
+  },
+  "Bengaluru Urban|Karnataka": {
+    population: { total: 10500000, growth_rate_10yr: 17, density_per_sqkm: 4381, literacy_rate: 87 },
+    economy: {
+      avg_monthly_income_inr: 48000,
+      employment_rate: 72,
+      major_industries: ["IT Services", "Startups", "Biotechnology"],
+      cost_of_living_index: 74,
+    },
+    education: { schools: 3600, colleges: 260, student_teacher_ratio: 21, higher_ed_access_score: 90 },
+    healthcare: { hospitals: 420, clinics: 1900, doctors_per_10k: 32, accessibility_score: 84 },
+    infrastructure: { road_quality_score: 54, public_transport_score: 68, internet_penetration: 88, power_reliability: 84 },
+    environment: { aqi_avg: 84, green_cover_pct: 14, water_availability_score: 50 },
+    safety: { crime_rate_index: 36, night_safety_score: 73, women_safety_score: 66 },
+    employment: { job_openings_index: 90, growing_sectors: ["IT Services", "Startups"], avg_salary_growth_pct: 11 },
+  },
+  "Mysuru|Karnataka": {
+    population: { total: 3002000, growth_rate_10yr: 9, density_per_sqkm: 431, literacy_rate: 82 },
+    economy: {
+      avg_monthly_income_inr: 24000,
+      employment_rate: 60,
+      major_industries: ["Tourism", "Sandalwood & Silk", "Agriculture"],
+      cost_of_living_index: 43,
+    },
+    education: { schools: 1400, colleges: 70, student_teacher_ratio: 25, higher_ed_access_score: 68 },
+    healthcare: { hospitals: 110, clinics: 440, doctors_per_10k: 17, accessibility_score: 64 },
+    infrastructure: { road_quality_score: 62, public_transport_score: 52, internet_penetration: 64, power_reliability: 78 },
+    environment: { aqi_avg: 54, green_cover_pct: 30, water_availability_score: 64 },
+    safety: { crime_rate_index: 21, night_safety_score: 76, women_safety_score: 72 },
+    employment: { job_openings_index: 40, growing_sectors: ["Tourism", "IT"], avg_salary_growth_pct: 6 },
+  },
+  "Mumbai City|Maharashtra": {
+    population: { total: 3145000, growth_rate_10yr: 5, density_per_sqkm: 20038, literacy_rate: 91 },
+    economy: {
+      avg_monthly_income_inr: 58000,
+      employment_rate: 71,
+      major_industries: ["Finance", "Media & Entertainment", "Port & Trade"],
+      cost_of_living_index: 94,
+    },
+    education: { schools: 1900, colleges: 130, student_teacher_ratio: 24, higher_ed_access_score: 86 },
+    healthcare: { hospitals: 210, clinics: 980, doctors_per_10k: 29, accessibility_score: 80 },
+    infrastructure: { road_quality_score: 48, public_transport_score: 86, internet_penetration: 89, power_reliability: 91 },
+    environment: { aqi_avg: 98, green_cover_pct: 9, water_availability_score: 50 },
+    safety: { crime_rate_index: 43, night_safety_score: 69, women_safety_score: 62 },
+    employment: { job_openings_index: 88, growing_sectors: ["Finance", "Media"], avg_salary_growth_pct: 8 },
+  },
+  "Pune|Maharashtra": {
+    population: { total: 9430000, growth_rate_10yr: 16, density_per_sqkm: 603, literacy_rate: 88 },
+    economy: {
+      avg_monthly_income_inr: 36000,
+      employment_rate: 67,
+      major_industries: ["IT Services", "Automobile Manufacturing", "Education"],
+      cost_of_living_index: 58,
+    },
+    education: { schools: 2800, colleges: 250, student_teacher_ratio: 23, higher_ed_access_score: 88 },
+    healthcare: { hospitals: 260, clinics: 1150, doctors_per_10k: 24, accessibility_score: 76 },
+    infrastructure: { road_quality_score: 60, public_transport_score: 60, internet_penetration: 80, power_reliability: 84 },
+    environment: { aqi_avg: 78, green_cover_pct: 20, water_availability_score: 58 },
+    safety: { crime_rate_index: 28, night_safety_score: 75, women_safety_score: 69 },
+    employment: { job_openings_index: 74, growing_sectors: ["IT Services", "Automobile"], avg_salary_growth_pct: 9 },
+  },
+  "New Delhi|Delhi": {
+    population: { total: 249998, growth_rate_10yr: 4, density_per_sqkm: 4500, literacy_rate: 92 },
+    economy: {
+      avg_monthly_income_inr: 60000,
+      employment_rate: 72,
+      major_industries: ["Government", "Finance", "Diplomacy & Institutions"],
+      cost_of_living_index: 85,
+    },
+    education: { schools: 180, colleges: 55, student_teacher_ratio: 20, higher_ed_access_score: 94 },
+    healthcare: { hospitals: 40, clinics: 220, doctors_per_10k: 38, accessibility_score: 90 },
+    infrastructure: { road_quality_score: 78, public_transport_score: 82, internet_penetration: 92, power_reliability: 92 },
+    environment: { aqi_avg: 165, green_cover_pct: 20, water_availability_score: 55 },
+    safety: { crime_rate_index: 42, night_safety_score: 66, women_safety_score: 58 },
+    employment: { job_openings_index: 70, growing_sectors: ["Government", "Finance"], avg_salary_growth_pct: 7 },
+  },
+};
+
+// Village-level data — lighter set of categories (no tourism/lifestyle/climate,
+// which are less meaningful at this granularity with placeholder data).
+// Keyed by village name + district name.
+export const villageProfiles = {
+  "Madukkarai|Coimbatore": {
+    population: { total: 15000, growth_rate_10yr: 5, density_per_sqkm: 620, literacy_rate: 74 },
+    economy: {
+      avg_monthly_income_inr: 12000,
+      employment_rate: 52,
+      major_industries: ["Agriculture", "Cement & Mining"],
+      cost_of_living_index: 28,
+    },
+    education: { schools: 9, colleges: 0, student_teacher_ratio: 32, higher_ed_access_score: 30 },
+    healthcare: { hospitals: 1, clinics: 4, doctors_per_10k: 6, accessibility_score: 35 },
+    infrastructure: { road_quality_score: 45, public_transport_score: 30, internet_penetration: 42, power_reliability: 68 },
+    environment: { aqi_avg: 46, green_cover_pct: 40, water_availability_score: 55 },
+    safety: { crime_rate_index: 14, night_safety_score: 80, women_safety_score: 76 },
+  },
+  "Thiruparankundram|Madurai": {
+    population: { total: 22000, growth_rate_10yr: 6, density_per_sqkm: 740, literacy_rate: 71 },
+    economy: {
+      avg_monthly_income_inr: 11000,
+      employment_rate: 49,
+      major_industries: ["Agriculture", "Tourism & Pilgrimage Trade"],
+      cost_of_living_index: 26,
+    },
+    education: { schools: 12, colleges: 1, student_teacher_ratio: 31, higher_ed_access_score: 32 },
+    healthcare: { hospitals: 1, clinics: 5, doctors_per_10k: 5, accessibility_score: 32 },
+    infrastructure: { road_quality_score: 42, public_transport_score: 28, internet_penetration: 38, power_reliability: 65 },
+    environment: { aqi_avg: 50, green_cover_pct: 32, water_availability_score: 48 },
+    safety: { crime_rate_index: 12, night_safety_score: 78, women_safety_score: 74 },
+  },
+  "Naguvanahalli|Mysuru": {
+    population: { total: 8500, growth_rate_10yr: 4, density_per_sqkm: 510, literacy_rate: 73 },
+    economy: {
+      avg_monthly_income_inr: 10500,
+      employment_rate: 48,
+      major_industries: ["Agriculture", "Sericulture"],
+      cost_of_living_index: 24,
+    },
+    education: { schools: 6, colleges: 0, student_teacher_ratio: 33, higher_ed_access_score: 28 },
+    healthcare: { hospitals: 0, clinics: 3, doctors_per_10k: 4, accessibility_score: 28 },
+    infrastructure: { road_quality_score: 40, public_transport_score: 25, internet_penetration: 35, power_reliability: 64 },
+    environment: { aqi_avg: 42, green_cover_pct: 45, water_availability_score: 58 },
+    safety: { crime_rate_index: 10, night_safety_score: 82, women_safety_score: 78 },
+  },
+};

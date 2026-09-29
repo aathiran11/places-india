@@ -1,0 +1,51 @@
+{
+  "metrics": {
+    "r2_test": 0.5164749503728745,
+    "mae_test": 11.235882124330962,
+    "n_train": 544,
+    "n_test": 136,
+    "feature_importances": {
+      "GROWTHRATE": 0.3508684832214918,
+      "P_ST_POP": 0.18858060525429796,
+      "population_density": 0.13214199713132566,
+      "TOTPOPULAT": 0.0925299555291864,
+      "SCHTOT": 0.09135876743130773,
+      "AREA_SQKM": 0.05773443344697163,
+      "P_SC_POP": 0.055790684493125076,
+      "POPULATION_0_6": 0.030995073492293843
+    }
+  },
+  "pca_explained_variance": 0.5609807610131381,
+  "pca_loadings": {
+    "OVERALL_LI": 0.24181743081448437,
+    "P_URB_POP": 0.2631871041005295,
+    "water_access_pct": 0.1063552375067441,
+    "electricity_access_pct": 0.7287662965970362,
+    "toilet_access_pct": 0.07198785526153992,
+    "computer_access_pct": 0.5050942843670718,
+    "pupil_teacher_ratio": 0.16803095127222584,
+    "gender_literacy_gap": 0.20190153496121835,
+    "SEXRATIO": 0.0233240000428186
+  },
+  "index_indicators": [
+    "OVERALL_LI",
+    "P_URB_POP",
+    "water_access_pct",
+    "electricity_access_pct",
+    "toilet_access_pct",
+    "computer_access_pct",
+    "pupil_teacher_ratio",
+    "gender_literacy_gap",
+    "SEXRATIO"
+  ],
+  "model_features": [
+    "TOTPOPULAT",
+    "GROWTHRATE",
+    "AREA_SQKM",
+    "P_SC_POP",
+    "P_ST_POP",
+    "POPULATION_0_6",
+    "population_density",
+    "SCHTOT"
+  ]
+}

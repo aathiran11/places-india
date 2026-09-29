@@ -1,0 +1,5 @@
+level,name,state_name,district_name,type,population,headquarters
+district,Salem,Tamil Nadu,,,,Salem
+city,Salem,Tamil Nadu,Salem,city,919000,
+town,Attur,Tamil Nadu,Salem,town,45000,
+village,Kannankurichi,Tamil Nadu,Salem,,9000,

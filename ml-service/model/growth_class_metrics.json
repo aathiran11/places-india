@@ -1,0 +1,65 @@
+{
+  "accuracy": 0.5882352941176471,
+  "classification_report": {
+    "Rapid Growth": {
+      "precision": 0.6190476190476191,
+      "recall": 0.5777777777777777,
+      "f1-score": 0.5977011494252874,
+      "support": 45.0
+    },
+    "Slow / Declining": {
+      "precision": 0.6065573770491803,
+      "recall": 0.8043478260869565,
+      "f1-score": 0.6915887850467289,
+      "support": 46.0
+    },
+    "Stable": {
+      "precision": 0.5151515151515151,
+      "recall": 0.37777777777777777,
+      "f1-score": 0.4358974358974359,
+      "support": 45.0
+    },
+    "accuracy": 0.5882352941176471,
+    "macro avg": {
+      "precision": 0.5802521704161049,
+      "recall": 0.586634460547504,
+      "f1-score": 0.5750624567898174,
+      "support": 136.0
+    },
+    "weighted avg": {
+      "precision": 0.5804455910531128,
+      "recall": 0.5882352941176471,
+      "f1-score": 0.5759192680270006,
+      "support": 136.0
+    }
+  },
+  "feature_importances": {
+    "OVERALL_LI": 0.2240083520698205,
+    "POPULATION_0_6": 0.13791744509224385,
+    "P_SC_POP": 0.11264219761558521,
+    "population_density": 0.10856068143204155,
+    "AREA_SQKM": 0.10745783274570837,
+    "TOTPOPULAT": 0.10507618810388746,
+    "P_ST_POP": 0.10383551239527343,
+    "SCHTOT": 0.10050179054543976
+  },
+  "model_features": [
+    "TOTPOPULAT",
+    "AREA_SQKM",
+    "P_SC_POP",
+    "P_ST_POP",
+    "POPULATION_0_6",
+    "population_density",
+    "SCHTOT",
+    "OVERALL_LI"
+  ],
+  "classes": [
+    "Slow / Declining",
+    "Stable",
+    "Rapid Growth"
+  ],
+  "class_thresholds": {
+    "slow_below": 13.66,
+    "rapid_above": 20.176666666666666
+  }
+}
