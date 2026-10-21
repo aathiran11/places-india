@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const ML_SERVICE_URL = "http://localhost:8000";
+const ML_SERVICE_URL = (import.meta.env.VITE_ML_URL ?? "http://localhost:8000");
 
 // Matches the "population" category shape used across city/district/village
 // profiles (see lib/api.ts's CategoryData). Only the fields actually needed

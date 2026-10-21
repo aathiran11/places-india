@@ -10,8 +10,8 @@ import {
   Tooltip,
 } from "recharts";
 
-const API_URL = "http://localhost:5000/api";
-const ML_URL = "http://localhost:8000";
+const API_URL = (import.meta.env.VITE_API_URL ?? "http://localhost:5000/api");
+const ML_URL = (import.meta.env.VITE_ML_URL ?? "http://localhost:8000");
 
 interface SearchResult {
   id: number;
