@@ -79,10 +79,10 @@ const VILLAGE_COORDS = {
   "Naguvanahalli|Mysuru": [12.2500, 76.6167],
 };
 
-async function run() {
+export async function addCoordinates(client = pool) {
   console.log("Adding coordinates to states...");
   for (const [name, [lat, lng]] of Object.entries(STATE_COORDS)) {
-    await pool.query(
+    await client.query(
       `UPDATE states SET latitude = $1, longitude = $2 WHERE name = $3`,
       [lat, lng, name]
     );
@@ -91,7 +91,7 @@ async function run() {
   console.log("Adding coordinates to districts...");
   for (const [key, [lat, lng]] of Object.entries(DISTRICT_COORDS)) {
     const [districtName, stateName] = key.split("|");
-    await pool.query(
+    await client.query(
       `UPDATE districts d SET latitude = $1, longitude = $2
        FROM states s
        WHERE d.state_id = s.id AND d.name = $3 AND s.name = $4`,
@@ -101,7 +101,7 @@ async function run() {
 
   console.log("Adding coordinates to cities...");
   for (const [name, [lat, lng]] of Object.entries(CITY_COORDS)) {
-    await pool.query(`UPDATE cities SET latitude = $1, longitude = $2 WHERE name = $3`, [
+    await client.query(`UPDATE cities SET latitude = $1, longitude = $2 WHERE name = $3`, [
       lat,
       lng,
       name,
@@ -111,7 +111,7 @@ async function run() {
   console.log("Adding coordinates to villages...");
   for (const [key, [lat, lng]] of Object.entries(VILLAGE_COORDS)) {
     const [villageName, districtName] = key.split("|");
-    await pool.query(
+    await client.query(
       `UPDATE villages v SET latitude = $1, longitude = $2
        FROM districts d
        WHERE v.district_id = d.id AND v.name = $3 AND d.name = $4`,
@@ -119,11 +119,14 @@ async function run() {
     );
   }
 
-  console.log("Done.");
-  await pool.end();
+  console.log("Done adding coordinates.");
 }
 
-run().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+import { fileURLToPath } from "url";
+if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
+  addCoordinates().then(() => pool.end()).catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}
+

@@ -116,10 +116,13 @@ async function init() {
     );
   }
 
-  // 6. Coordinates for Map
-  console.log("[6/6] Applying coordinates for map visualization...");
-  await import("./seed/add_coordinates.js");
-  await import("./seed/add_ml_fields.js");
+  // 6. Coordinates for Map & ML Fields
+  console.log("[6/6] Applying coordinates for map visualization and ML fields...");
+  const { addCoordinates } = await import("./seed/add_coordinates.js");
+  await addCoordinates(pool);
+
+  const { addMlFields } = await import("./seed/add_ml_fields.js");
+  await addMlFields(pool);
 
   console.log("=== Database successfully initialized with all phases! ===");
   await pool.end();

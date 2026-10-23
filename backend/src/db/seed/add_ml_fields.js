@@ -32,8 +32,8 @@ const DISTRICT_ML_FIELDS = {
   "New Delhi|Delhi": { area_sqkm: 43, sc_pop_pct: 16.9, st_pop_pct: 0.4, pop_0_6_pct: 8.9 },
 };
 
-async function mergePopulationFields(placeType, placeId, fields) {
-  await pool.query(
+async function mergePopulationFields(client, placeType, placeId, fields) {
+  await client.query(
     `UPDATE place_data
      SET population = COALESCE(population, '{}'::jsonb) || $3::jsonb,
          updated_at = now()
@@ -42,21 +42,21 @@ async function mergePopulationFields(placeType, placeId, fields) {
   );
 }
 
-async function run() {
+export async function addMlFields(client = pool) {
   console.log("Adding ML demographic fields to cities...");
   for (const [name, fields] of Object.entries(CITY_ML_FIELDS)) {
-    const { rows } = await pool.query("SELECT id FROM cities WHERE name = $1", [name]);
+    const { rows } = await client.query("SELECT id FROM cities WHERE name = $1", [name]);
     if (!rows.length) {
       console.warn(`City not found: ${name} — skipping.`);
       continue;
     }
-    await mergePopulationFields("city", rows[0].id, fields);
+    await mergePopulationFields(client, "city", rows[0].id, fields);
   }
 
   console.log("Adding ML demographic fields to districts...");
   for (const [key, fields] of Object.entries(DISTRICT_ML_FIELDS)) {
     const [districtName, stateName] = key.split("|");
-    const { rows } = await pool.query(
+    const { rows } = await client.query(
       `SELECT d.id FROM districts d JOIN states s ON s.id = d.state_id
        WHERE d.name = $1 AND s.name = $2`,
       [districtName, stateName]
@@ -65,14 +65,17 @@ async function run() {
       console.warn(`District not found: ${districtName}, ${stateName} — skipping.`);
       continue;
     }
-    await mergePopulationFields("district", rows[0].id, fields);
+    await mergePopulationFields(client, "district", rows[0].id, fields);
   }
 
-  console.log("Done. Cities/districts above now have enough data for the Development Score badge.");
-  await pool.end();
+  console.log("Done adding ML demographic fields.");
 }
 
-run().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+import { fileURLToPath } from "url";
+if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
+  addMlFields().then(() => pool.end()).catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}
+
