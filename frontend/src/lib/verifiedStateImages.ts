@@ -42,8 +42,8 @@ export const VERIFIED_STATE_IMAGES: Record<string, VerifiedStateImage> = {
     credit: "Mysore Palace — Jainakshaya, Wikimedia Commons, CC BY-SA 3.0",
   },
   Punjab: {
-    url: "https://commons.wikimedia.org/wiki/Special:FilePath/Golden%20Temple%2C%20Amritsar.JPG",
-    credit: "Golden Temple, Amritsar — Wikimedia Commons, CC BY-SA 3.0",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Sri_Harmandir_Sahib.JPG/1280px-Sri_Harmandir_Sahib.JPG",
+    credit: "Sri Harmandir Sahib (Golden Temple), Amritsar — Wikimedia Commons, CC BY-SA 3.0",
   },
   "West Bengal": {
     url: "https://commons.wikimedia.org/wiki/Special:FilePath/Victoria%20Memorial-Kolkata%2C%20West%20Bengal%2C%20India.JPG",

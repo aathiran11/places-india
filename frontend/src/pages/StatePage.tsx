@@ -33,9 +33,11 @@ export default function StatePage() {
   const { id } = useParams();
   const [state, setState] = useState<StateDetail | null>(null);
   const [loading, setLoading] = useState(true);
+  const [imageFailed, setImageFailed] = useState(false);
 
   useEffect(() => {
     setLoading(true);
+    setImageFailed(false);
     api
       .get<StateDetail>(`/places/states/${id}`)
       .then(setState)
@@ -47,7 +49,7 @@ export default function StatePage() {
 
   const theme = getStateTheme(state.name);
   const Skyline = SKYLINES[theme.skyline];
-  const photo = VERIFIED_STATE_IMAGES[state.name];
+  const photo = !imageFailed ? VERIFIED_STATE_IMAGES[state.name] : null;
 
   return (
     <div>
@@ -59,6 +61,7 @@ export default function StatePage() {
               src={photo.url}
               alt={`${state.name} — real photograph`}
               className="absolute inset-0 h-full w-full object-cover"
+              onError={() => setImageFailed(true)}
             />
             {/* Two overlays: a left-to-right dark gradient so the text block
                 (always left-aligned) stays readable regardless of what's in

@@ -191,6 +191,12 @@ export default function Home() {
                   src={verifiedImage?.url || PREVIEW_IMAGES[active % PREVIEW_IMAGES.length]}
                   alt={current ? current.name : "India"}
                   className="h-full w-full object-cover"
+                  onError={(e) => {
+                    const fallback = PREVIEW_IMAGES[active % PREVIEW_IMAGES.length];
+                    if (e.currentTarget.src !== fallback) {
+                      e.currentTarget.src = fallback;
+                    }
+                  }}
                 />
                 <figcaption
                   className="absolute inset-x-0 bottom-0 p-5"
