@@ -8,7 +8,7 @@ import { API_BASE_URL } from "../lib/api";
 const heroPalace = "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1600&q=80";
 const placeTemple = "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&q=80";
 const placeStepwell = "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&q=80";
-const placeBazaar = "https://images.unsplash.com/photo-1596395463327-b0a4c0e7fce5?w=800&q=80";
+const placeBazaar = "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&q=80";
 const placeGhat = "https://images.unsplash.com/photo-1561361398-a4b1e1e1e7a5?w=800&q=80";
 
 const API_URL = API_BASE_URL;
@@ -269,6 +269,11 @@ export default function Home() {
               src={placeBazaar}
               alt="A bazaar street in an Indian city"
               className="w-full rounded-lg border border-gold/30 object-cover"
+              onError={(e) => {
+                if (e.currentTarget.src !== heroPalace) {
+                  e.currentTarget.src = heroPalace;
+                }
+              }}
             />
           </figure>
           <div>
