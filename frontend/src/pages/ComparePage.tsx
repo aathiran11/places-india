@@ -9,8 +9,9 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
+import { API_BASE_URL } from "../lib/api";
 
-const API_URL = (import.meta.env.VITE_API_URL ?? "http://localhost:5000/api");
+const API_URL = API_BASE_URL;
 const ML_URL = (import.meta.env.VITE_ML_URL ?? "http://localhost:8000");
 
 interface SearchResult {

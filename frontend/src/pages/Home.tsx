@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { getStateTheme } from "../lib/stateThemes";
 import { VERIFIED_STATE_IMAGES } from "../lib/verifiedStateImages";
 import SearchBar from "../components/SearchBar";
+import { API_BASE_URL } from "../lib/api";
 
 const heroPalace = "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1600&q=80";
 const placeTemple = "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&q=80";
@@ -10,7 +11,7 @@ const placeStepwell = "https://images.unsplash.com/photo-1587474260584-136574528
 const placeBazaar = "https://images.unsplash.com/photo-1596395463327-b0a4c0e7fce5?w=800&q=80";
 const placeGhat = "https://images.unsplash.com/photo-1561361398-a4b1e1e1e7a5?w=800&q=80";
 
-const API_URL = `${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api`;
+const API_URL = API_BASE_URL;
 
 interface StateItem {
   id: number;

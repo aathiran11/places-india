@@ -1,4 +1,5 @@
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const raw = (import.meta.env.VITE_API_URL || "http://localhost:5000").replace(/\/+$/, "");
+export const API_BASE_URL = raw.endsWith("/api") ? raw : `${raw}/api`;
 
 function authHeaders(): Record<string, string> {
   const token = localStorage.getItem("token");
@@ -6,7 +7,12 @@ function authHeaders(): Record<string, string> {
 }
 
 async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
-  const res = await fetch(`${BASE_URL}${path}`, {
+  const cleanPath = path.startsWith("/") ? path : `/${path}`;
+  const fullUrl = cleanPath.startsWith("/api/")
+    ? `${raw.replace(/\/api$/, "")}${cleanPath}`
+    : `${API_BASE_URL}${cleanPath}`;
+
+  const res = await fetch(fullUrl, {
     ...options,
     headers: {
       "Content-Type": "application/json",
@@ -120,7 +126,7 @@ export async function uploadImport(file: File, importType: "places_hierarchy" | 
   formData.append("import_type", importType);
 
   const token = localStorage.getItem("token");
-  const res = await fetch(`${BASE_URL}/admin/import`, {
+  const res = await fetch(`${API_BASE_URL}/admin/import`, {
     method: "POST",
     headers: token ? { Authorization: `Bearer ${token}` } : {},
     body: formData,

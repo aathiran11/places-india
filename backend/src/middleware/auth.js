@@ -1,5 +1,7 @@
 import jwt from "jsonwebtoken";
 
+const JWT_SECRET = process.env.JWT_SECRET || "place_platform_secret_jwt_key_2026";
+
 export function requireAuth(req, res, next) {
   const header = req.headers.authorization;
   if (!header || !header.startsWith("Bearer ")) {
@@ -7,7 +9,7 @@ export function requireAuth(req, res, next) {
   }
   const token = header.split(" ")[1];
   try {
-    const payload = jwt.verify(token, process.env.JWT_SECRET);
+    const payload = jwt.verify(token, JWT_SECRET);
     req.user = payload;
     next();
   } catch (err) {

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { API_BASE_URL } from "../lib/api";
 
-const API_URL = (import.meta.env.VITE_API_URL ?? "http://localhost:5000/api");
+const API_URL = API_BASE_URL;
 
 interface RankingResult {
   id: number;
